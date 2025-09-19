@@ -176,3 +176,12 @@ The platform middleware handles several things for your app:
 - Injects identity information into HTTP request headers
 
 The module runs separately from your application code and can be configured using Azure Resource Manager settings or using a configuration file. No SDKs, specific programming languages, or changes to your application code are required
+
+### Discover App Service networking features
+
+By default, apps hosted in App Service are accessible directly through the internet and can reach internet-hosted endpoints. For many applications, you need to control the inbound and outbound network traffic.
+
+There are two main deployment types for Azure App Service:
+
+- The multitenant public service hosts App Service plans in the Free, Shared, Basic, Standard, Premium, PremiumV2, and PremiumV3 pricing SKUs.
+- The single-tenant App Service Environment (ASE) hosts Isolated SKU App Service plans directly in your Azure virtual network.
