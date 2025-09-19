@@ -137,3 +137,42 @@ In Azure App Service, you can add up to nine sidecar containers for each sidecar
 You can add a sidecar container through the Deployment Center in the app's management page.
 
 ## Explore authentication and authorization in App Service
+
+Azure App Service provides built-in authentication and authorization support. You can sign in users and access data by writing minimal or no code in your web app, RESTful API, mobile back end, or Azure Functions.
+
+### Why use the built-in authentication?
+
+You're not required to use App Service for authentication and authorization. Many web frameworks are bundled with security features, and you can use them if you like. If you need more flexibility than App Service provides, you can also write your own utilities.
+
+The built-in authentication feature for App Service and Azure Functions can save you time and effort by providing out-of-the-box authentication with federated identity providers, allowing you to focus on the rest of your application.
+
+- Azure App Service allows you to integrate various auth capabilities into your web app or API without implementing them yourself.
+- Auth is built directly into the platform and doesn’t require any particular language, SDK, security expertise, or code.
+- You can integrate with multiple login providers. For example, Microsoft Entra ID, Facebook, Google, X.
+
+### Identity providers
+
+App Service uses federated identity, in which a third-party identity provider manages the user identities and authentication flow for you. The following identity providers are available by default:
+
+- Microsoft Entra: `/.auth/login/aad`
+- Facebook: `/.auth/login/facebook`
+- Google: `/.auth/login/google`
+- X: `/.auth/login/x`
+- GitHub: `/.auth/login/github`
+- Apple: `/.auth/login/apple`
+- Any OpenID Connect provider: `/.auth/login/<providerName>`
+
+When you configure this feature with one of these providers, its sign-in endpoint is available for user authentication and for validation of authentication tokens from the provider. You can provide your users with any number of these sign-in options.
+
+### How it works
+
+The authentication and authorization middleware component is a feature of the platform that runs on the same VM as your application. When enabled, every incoming HTTP request passes through it before being handled by your application.
+
+The platform middleware handles several things for your app:
+
+- Authenticates users and clients with the specified identity provider
+- Validates, stores, and refreshes OAuth tokens issued by the configured identity provider
+- Manages the authenticated session
+- Injects identity information into HTTP request headers
+
+The module runs separately from your application code and can be configured using Azure Resource Manager settings or using a configuration file. No SDKs, specific programming languages, or changes to your application code are required
