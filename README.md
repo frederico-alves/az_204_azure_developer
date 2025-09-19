@@ -1,2 +1,3 @@
-# az-204-azure-app-service
-https://learn.microsoft.com/en-us/training/paths/create-azure-app-service-web-apps/
+# AZ-204 - Azure App Service
+
+[Implement Azure App Service web apps](https://learn.microsoft.com/en-us/training/paths/create-azure-app-service-web-apps/)
