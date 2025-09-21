@@ -1,6 +1,6 @@
-# Azure App Service
+# Explore Azure App Service
 
-[Implement Azure App Service web apps](https://learn.microsoft.com/en-us/training/paths/create-azure-app-service-web-apps/)
+[Explore Azure App Service](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-app-service/)
 
 ## Overview
 
